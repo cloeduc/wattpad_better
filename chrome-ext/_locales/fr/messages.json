@@ -1,0 +1,28 @@
+{
+  "appName": {
+    "message": "Amélioration de l'interface WattPad",
+    "description": "Amélioration de l'interface WattPad"
+  },
+  "appDesc": {
+    "message": "",
+    "description":""
+  },
+  "optionsTitle": {
+  	"message": "Activer les améliorations de l'interface."
+  },
+  "optionEnableSelect":{
+  	"message": "Activer la sélection dans les fictions."
+  },
+  "optionsEnableBigComment":{
+  	"message": "Adapter la taille des champs commentaire (MP, discussion) à la taille du texte saisi."
+  },
+  "optionsEnableJustify":{
+  	"message": "Afficher les fictions justifiées."
+  },
+  "optionsEnableLinks":{
+  	"message": "Rendre les liens clickables dans les fictions."
+  },
+  "optionsSave":{
+  	"message": "Enregistrer"
+  }
+}

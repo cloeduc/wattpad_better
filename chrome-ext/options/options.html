@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title data-message="optionsTitle">Configurer l'interface WattPad</title>
+		<meta charset="UTF-8">
+		<script src="options.js"></script>
+	</head>
+	<body>
+
+		<h1 data-message="optionsTitle">__MSG_title__</h1>
+
+		<div>
+			<label>
+				<input type="checkbox" id="wattpad_enable_select">
+				<span data-message="optionEnableSelect">Activer la sélection dans les fictions</span>
+			</label>
+		</div>
+		<div>
+			<label>
+				<input type="checkbox" id="wattpad_enable_big_comment">
+				<span data-message="optionsEnableBigComment">Adapter la taille des champs commentaire (MP, discussion) à la taille du texte saisi</span>
+			</label>
+		</div>
+		<div>
+			<label>
+				<input type="checkbox" id="wattpad_enable_justify">
+				<span data-message="optionsEnableJustify">Afficher les fictions justifiées</span>
+			</label>
+		</div>
+		<div>
+		<label>
+			<input type="checkbox" id="wattpad_enable_links">
+			<span data-message="optionsEnableLinks">Rendre les liens clickables dans les fictions</span>
+		</label>
+		</div>
+
+		<div id="status"></div>
+		<div>
+			<hr />
+			<button id="wattpad_enable_save"><span data-message="optionsSave">Enregistrer</span></button>
+		</div>
+	</body>
+</html>
