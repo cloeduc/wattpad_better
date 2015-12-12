@@ -1,8 +1,8 @@
 {
-  "name": "BetterWattpad - __MSG_appName__",
+  "name": "__MSG_WBappName__",
   "description": "__MSG_appDesc__",
   "default_locale": "fr",
-  "version": "1",
+  "version": "1.1.1",
   "author":"Alinoée",
    "permissions": [
           "storage"

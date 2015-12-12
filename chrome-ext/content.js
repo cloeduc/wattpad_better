@@ -1,7 +1,7 @@
-var bw_ENABLE_JUSTIFY = false;
-var bw_ENABLE_SELECT = false;
-var bw_ENABLE_COMMENT_IN_BIG = false;
-var bw_ENABLE_AUTO_LINK = false;
+var bw_ENABLE_JUSTIFY = true;
+var bw_ENABLE_SELECT = true;
+var bw_ENABLE_COMMENT_IN_BIG = true;
+var bw_ENABLE_AUTO_LINK = true;
 var bw_INDENT = 0;
 
 chrome.storage.sync.get("wattpad_enable_select", function(result) {

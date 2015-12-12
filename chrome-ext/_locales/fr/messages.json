@@ -1,11 +1,11 @@
 {
-  "appName": {
+  "WBappName": {
     "message": "Amélioration de l'interface WattPad",
     "description": "Amélioration de l'interface WattPad"
   },
   "appDesc": {
-    "message": "Rends l'interface de WattPad plus praticable sur ordinateur (ajoute quelques petites améliorations complétement indispenssables). Complétement configurable.",
-    "description":"Rends l'interface de WattPad plus praticable sur ordinateur (ajoute quelques petites améliorations complétement indispenssables). Complétement configurable."
+    "message": "Rends l'interface de WattPad plus praticable sur ordinateur (petites améliorations indispenssables). Complétement configurable.",
+    "description":"Rends l'interface de WattPad plus praticable sur ordinateur (petites améliorations indispenssables). Complétement configurable."
   },
   "optionsTitle": {
   	"message": "Gérer les améliorations de l'interface."
