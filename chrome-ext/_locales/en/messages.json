@@ -1,28 +1,43 @@
 {
   "appName": {
-    "message": "Amélioration de l'interface WattPad",
-    "description": "Amélioration de l'interface WattPad"
+    "message": "Better Wattpad Interface",
+    "description": "Better Wattpad Interface"
   },
   "appDesc": {
-    "message": "",
-    "description":""
+    "message": "Make better Wattpad interface on desktop (just somes tricks, but incredibly convenient). Fully configurable ",
+    "description":"Make better Wattpad interface on desktop (just somes tricks, but incredibly convenient). Fully configurable"
   },
   "optionsTitle": {
-  	"message": "Activer les améliorations de l'interface."
+    "message": "Manage WattPad interface ameliorations"
   },
   "optionEnableSelect":{
-  	"message": "Activer la sélection dans les fictions."
+    "message": "Enable selection on fictions"
   },
   "optionsEnableBigComment":{
-  	"message": "Adapter la taille des champs commentaire (MP, discussion) à la taille du texte saisi."
+    "message": "Auto-resize comment (discussion, MP) fields on user text."
   },
   "optionsEnableJustify":{
-  	"message": "Afficher les fictions justifiées."
+    "message": "Justify fictions"
   },
   "optionsEnableLinks":{
-  	"message": "Rendre les liens clickables dans les fictions."
+    "message": "Make links clickable on fiction page"
   },
   "optionsSave":{
-  	"message": "Enregistrer"
+    "message": "Save"
+  },
+  "optionsEnableAlinea":{
+    "message": "Set <b>text indentation</b> on all paragraphe begins:"
+  },
+  "optionsEnableAlineaNone":{
+    "message": "None"
+  },
+  "optionsEnableAlineaSimple":{
+    "message": "Simple"
+  },
+  "optionsEnableAlineaDouble":{
+    "message": "Double"
+  },
+  "optionsSaved":{
+    "message": "Options saved"
   }
 }

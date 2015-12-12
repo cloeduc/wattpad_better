@@ -4,11 +4,11 @@
     "description": "Amélioration de l'interface WattPad"
   },
   "appDesc": {
-    "message": "",
-    "description":""
+    "message": "Rends l'interface de WattPad plus praticable sur ordinateur (ajoute quelques petites améliorations complétement indispenssables). Complétement configurable.",
+    "description":"Rends l'interface de WattPad plus praticable sur ordinateur (ajoute quelques petites améliorations complétement indispenssables). Complétement configurable."
   },
   "optionsTitle": {
-  	"message": "Activer les améliorations de l'interface."
+  	"message": "Gérer les améliorations de l'interface."
   },
   "optionEnableSelect":{
   	"message": "Activer la sélection dans les fictions."
@@ -24,5 +24,20 @@
   },
   "optionsSave":{
   	"message": "Enregistrer"
+  },
+  "optionsEnableAlinea":{
+    "message": "Configurer l'<b>alinéa</b> en début de texte :"
+  },
+  "optionsEnableAlineaNone":{
+    "message": "Aucun"
+  },
+  "optionsEnableAlineaSimple":{
+    "message": "Simple"
+  },
+  "optionsEnableAlineaDouble":{
+    "message": "Double"
+  },
+  "optionsSaved":{
+    "message": "Options sauvegardées"
   }
 }
