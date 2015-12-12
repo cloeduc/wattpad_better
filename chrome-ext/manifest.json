@@ -1,5 +1,5 @@
 {
-  "name": "__MSG_appName__",
+  "name": "BetterWattpad - __MSG_appName__",
   "description": "__MSG_appDesc__",
   "default_locale": "fr",
   "version": "1",
@@ -11,9 +11,8 @@
   "options_ui": {"page": "options/options.html", "chrome_style": true},
   "icons": { "128": "medias/icons/icon_128.png", "64":"medias/icons/icon_64.png", "32":"medias/icons/icon_32.png", "16":"medias/icons/icon_16.png" },
   "content_scripts": [{
-  	"css": [ "pluginstyle.css" ],
     "matches": ["https://www.wattpad.com/*"],
-    "js": [ "content.js", "lib/jquery.min.js", "lib/autosize.min.js"]
+    "js": [ "lib/autosize.min.js", "content.js"]
   }],
   "manifest_version": 2
 }
