@@ -22,6 +22,9 @@
   "optionsEnableLinks":{
   	"message": "Rendre les liens clickables dans les fictions."
   },
+  "optionsEnableAutoBroadcast": {
+    "message": "Cocher automatiquement la case \"Informer mes abonnés\""
+  },
   "optionsSave":{
   	"message": "Enregistrer"
   },
@@ -39,5 +42,10 @@
   },
   "optionsSaved":{
     "message": "Options sauvegardées"
-  }
+  },
+  "optionsEnableLocalStorageGestion":{
+    "message" : "Activer les boutons pour recharger les notifications et les commentaires"
+    },
+  "contentRemoveNotificationsStorage": {"message": "Charger les nouvelles notifications"},
+  "contentRemoveCommentsStorage": {"message": "Charger les nouveaux commentaires"}
 }

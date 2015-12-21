@@ -19,6 +19,9 @@
   "optionsEnableJustify":{
     "message": "Justify fictions"
   },
+  "optionsEnableAutoBroadcast": {
+    "message": "Check \"Notify my Followers\" box"
+  },
   "optionsEnableLinks":{
     "message": "Make links clickable on fiction page"
   },
@@ -39,5 +42,10 @@
   },
   "optionsSaved":{
     "message": "Options saved"
-  }
+  },
+  "optionsEnableLocalStorageGestion":{
+    "message" : "Enable comments and notifications reload button"
+    },
+  "contentRemoveNotificationStorage": {"message": "Load new notifications"},
+  "contentRemoveCommentsStorage": {"message": "Load new comments"}
 }

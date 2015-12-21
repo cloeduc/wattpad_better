@@ -2,7 +2,7 @@
   "name": "__MSG_WBappName__",
   "description": "__MSG_appDesc__",
   "default_locale": "fr",
-  "version": "1.1.1",
+  "version": "1.1.5",
   "author":"Alinoée",
    "permissions": [
           "storage"
@@ -11,6 +11,7 @@
   "options_ui": {"page": "options/options.html", "chrome_style": true},
   "icons": { "128": "medias/icons/icon_128.png", "64":"medias/icons/icon_64.png", "32":"medias/icons/icon_32.png", "16":"medias/icons/icon_16.png" },
   "content_scripts": [{
+    "css": [ "bw_style.css" ],
     "matches": ["https://www.wattpad.com/*"],
     "js": [ "lib/autosize.min.js", "content.js"]
   }],
