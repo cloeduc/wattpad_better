@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better WattPad
 // @namespace    http://cestdoncvrai.fr/
-// @version      0.3
+// @version      0.7
 // @author       Alinoee
 // @match        https://www.wattpad.com/*
 // @grant        none
@@ -17,6 +17,7 @@ var bw_ENABLE_AUTO_LINK = true; // true -> make all links on fiction clikable //
 var bw_INDENT = 0; // 0 : no indentation (default comportement) // 1 : 1em indentation // 2 : 2em indentation ...etc.
 var bw_ENABLE_BROADCAT_AUTO = true; // true -> check "notify my user" // false -> default comportment
 var bw_ENABLE_LOCAL_STORAGE_GESTION=true;  // true display button to update notifications // false -> no button... no notifications !
+var bw_ENABLE_ADDITIONNAL_LINK=true;  // true display some additionals links to navigate on fiction
 /*
   START CORE - DO NOT MODIFIE
 */
@@ -32,7 +33,10 @@ function translate(text) {
     return text.replace(regex, function (match) {
       var key = match.substring(0, match.length - 1).replace('__MSG_','');
       var lang = window.navigator.language;
-      return (dic[lang][key])? dic[lang][key].message : 'undefined';
+      if(dic[lang])
+        return (dic[lang][key])? dic[lang][key].message : 'undefined';
+      else
+        return (dic["en"][key])? dic["en"][key].message : 'undefined';
     });
   }
 }
@@ -40,21 +44,31 @@ function translate(text) {
 var dic = {
   "en": {
     "contentRemoveNotificationStorage": {"message": "Load new notifications"},
-    "contentRemoveCommentsStorage": {"message": "Load new comments"}
+    "contentRemoveCommentsStorage": {"message": "Load new comments"},
+    "contentPrevChapter" : {"message":"Back to previous chapter"}
   },
   "fr": {
     "contentRemoveNotificationsStorage": {"message": "Charger les nouvelles notifications"},
-    "contentRemoveCommentsStorage": {"message": "Charger les nouveaux commentaires"}
+    "contentRemoveCommentsStorage": {"message": "Charger les nouveaux commentaires"},
+    "contentPrevChapter" : {"message":"Relir le chapitre précédent"}
   }
 }
-bw_addStyleOnHead('wem_generality', '#wb_reload_button{margin-bottom:10px; background:#F89B33;color:#fff}');
+if(bw_ENABLE_LOCAL_STORAGE_GESTION) {
+  bw_addStyleOnHead('wem_storagegestion', '#wb_reload_button{margin-bottom:10px; background:#F89B33;color:#fff}');
+}
 
+
+if(bw_ENABLE_ADDITIONNAL_LINK) {
+  bw_addStyleOnHead('wem_additionallinks', '#topFictionNavigation{border-top:1px solid #ededed;border-bottom:1px solid #ededed;display:block;font-size:14px;font-weight:600;color:#717171;line-height:24px;height:50px;width:93%;margin:auto;position:relative}.part-title{margin-bottom:10px}#topFictionNavigation .bw_links{position:absolute;display:flex;width:auto;color:#717171;top:10px}div.meta{border-bottom:none!important}.bw_links .fa-right{position:absolute;right:0;top:4px}.bw_links .fa-left{position:absolute;left:0;top:4px}.bw_links_left .next-up-title{text-align:left!important;margin-left:20px}.bw_bottom_links,.bw_links_right{text-align:right}.bw_links_right .next-up-title{margin-right:20px}.bw_links_right{border-top:none!important;right:0}.bw_links_left{left:0}.bw_bottom_links .next-up-title{text-align:right;width:97%}');
+}
 // CORE
 
 var bw_is_fiction_page = false;
 var bw_ignore_event = false;
 var bw_is_notif_page = false;
 var bw_is_profil_page = false;
+var previouslink = false;
+var nextlink =false ;
 
 var better_wattpad_init = function init(m, ob) {
   m.forEach(function (mutation) {
@@ -63,6 +77,15 @@ var better_wattpad_init = function init(m, ob) {
       bw_is_profil_page = bw_hasClass(document.getElementsByTagName('body')[0], 'route-userProfile');
       bw_is_notif_page = bw_hasClass(document.getElementsByTagName('body')[0], 'route-notifications');
   });
+  //event on notification link
+
+  var dropdownbutton = document.querySelectorAll('#profile-dropdown li a');
+  for(var di =0; di < dropdownbutton.length; di++)
+    {
+      if(dropdownbutton[di].getAttribute('href')=="/notifications"){
+        dropdownbutton[di].addEventListener('click', function() {local_storage_remove('notifications')});
+      }
+    }
   if(bw_ENABLE_LOCAL_STORAGE_GESTION && bw_is_notif_page)
   {
       local_storage_remove('notifications');
@@ -76,29 +99,46 @@ var better_wattpad_init = function init(m, ob) {
       if(bw_listen_mutation2 && document.getElementById('story-reading'))
       {
         ob.disconnect();
+        if(bw_ENABLE_ADDITIONNAL_LINK) {
+          var alreadyLinked =  document.querySelectorAll('header.panel-reading a.next-part');
+          if(alreadyLinked.length == 0) {
+            var funbarlist = document.querySelectorAll('#funbar-story ul.table-of-contents li');
+            var topOfFiction = document.querySelectorAll('header.panel-reading');
+            topOfFiction = topOfFiction[0];
+
+            var bottomOfFiction = document.querySelectorAll('#footer .next-part');
+            bottomOfFiction = bottomOfFiction[0];
+            for(var fi = 0; fi < funbarlist.length; fi++) {
+              if(funbarlist[fi].className == "active") {
+                previouslink = (funbarlist[fi-1])? funbarlist[fi-1] : false;
+                nextlink = (funbarlist[fi+1])? funbarlist[fi+1] : false;
+              }
+            }
+            if(previouslink || nextlink) {
+              var topFictionNavigation = document.createElement('div');
+              topFictionNavigation.setAttribute('id', 'topFictionNavigation');
+              topOfFiction.appendChild(topFictionNavigation);
+            }
+            if(previouslink) {
+              var topPrevElement = additionalLink(previouslink.children[0], "left");
+              var bottomPrevElement = additionalLink(previouslink.children[0], "right", true);
+              topFictionNavigation.appendChild(topPrevElement);
+              document.getElementById('footer').insertBefore(bottomPrevElement, bottomOfFiction);
+            }
+            if(nextlink) {
+              var toNextElement = additionalLink(nextlink.children[0], "right");
+              topFictionNavigation.appendChild(toNextElement);
+            }
+          }
+        }
+        //On page loading
         if (bw_ENABLE_SELECT)
         {
-          var elements = document.getElementsByClassName('panel-reading');
-          for (var i = 0; i < elements.length; i++) {
-            elements[i].style.MozUserSelect = 'text';
-            elements[i].style.WebkitUserSelect = 'text';
-            elements[i].style.MsUserSelect = 'text';
-          }
+          selection_enabled();
         }
         if (bw_ENABLE_AUTO_LINK)
         {
-          var link_plain_expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-          var link_anchor_expression = /href="([^\'\"]+)/gi;
-          var panels_readings = document.getElementsByClassName('panel-reading');
-          for (var i = 0; i < panels_readings.length; i++) {
-            if (panels_readings[i].nodeName != 'HEADER' && panels_readings[i].nodeName != 'FOOTER') {
-              var count_plain_links = bw_countLink(panels_readings[i].innerHTML, link_plain_expression);
-              if (count_plain_links > 0 && count_plain_links > bw_countLink(panels_readings[i].innerHTML, link_anchor_expression))
-              {
-                  panels_readings[i].innerHTML = bw_urlify(panels_readings[i].innerHTML, link_plain_expression);
-              }
-            }
-          }
+          autolink();
         }
         if (bw_ENABLE_JUSTIFY && !document.getElementById('wem_justify'))
         {
@@ -131,6 +171,22 @@ var better_wattpad_init = function init(m, ob) {
           local_storage_remove_button('comments', 'comments', "contentRemoveCommentsStorage");
           //local_storage_remove('comments');
         }
+        //Observe lazyloading pages part
+        var pages= document.querySelectorAll('div.part-content');
+        for(var pi = 0; pi<pages.length; pi++) {
+          if(pages[pi]){
+          new MutationObserver(function(){
+            if (bw_ENABLE_SELECT)
+            {
+              selection_enabled();
+            }
+            if (bw_ENABLE_AUTO_LINK)
+            {
+              autolink();
+            }
+            }).observe(pages[pi], {childList:true});
+          }
+        }
       }
     }).observe(document.body, { attributes: true, childList:true, subtree:true, attributeFilter: ['class']});
   }
@@ -155,13 +211,31 @@ var better_wattpad_init = function init(m, ob) {
 /*
  Launch observer
 */
-new MutationObserver(better_wattpad_init).observe(document.body, {
-  attributes: true,
-  childList:true,
-  attributeFilter: [
-    'class'
-  ]
-});
+
+
+if(window.location.href.indexOf("www.wattpad.com") > -1 ){
+  new MutationObserver(better_wattpad_init).observe(document.body, {
+    attributes: true,
+    childList:true,
+    attributeFilter: [
+      'class'
+    ]
+  });
+}
+
+function additionalLink(inspirationLink, orientation, withtitle) {
+  var element = document.createElement('a');
+  element.setAttribute('href',  inspirationLink.getAttribute('href'));
+  if(withtitle) {
+    element.setAttribute('class', 'on-navigate next-up next-part bw_bottom_links');
+    element.innerHTML = translate('<span style="font-size:16px;" aria-hidden="true" class="fa fa-left fa-wp-darkgrey next-up-icon pull-left"></span><div class="next-up-title"><div>__MSG_contentPrevChapter_</div><h6>'+previouslink.children[0].innerHTML+'</h6></div>')
+  }
+  else {
+    element.setAttribute('class', 'on-navigate next-up next-part bw_links bw_links_'+orientation);
+    element.innerHTML = '<span style="font-size:16px;" aria-hidden="true" class="fa fa-'+orientation+' fa-wp-darkgrey next-up-icon pull-'+orientation+'"></span><div class="next-up-title">'+inspirationLink.innerHTML+'</div>';
+  }
+  return element;
+}
 
 function profil_contoller()
 {
@@ -188,6 +262,31 @@ function profil_contoller()
   }
 }
 
+function selection_enabled()
+{
+  var elements = document.getElementsByClassName('panel-reading');
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style.MozUserSelect = 'text';
+    elements[i].style.WebkitUserSelect = 'text';
+    elements[i].style.MsUserSelect = 'text';
+  }
+}
+function autolink()
+{
+  var link_plain_expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+  var link_anchor_expression = /href="([^\'\"]+)/gi;
+  var src_anchor_expression = /src="([^\'\"]+)/gi;
+  var panels_readings = document.getElementsByClassName('panel-reading');
+  for (var i = 0; i < panels_readings.length; i++) {
+    if (panels_readings[i].nodeName != 'HEADER' && panels_readings[i].nodeName != 'FOOTER') {
+      var count_plain_links = bw_countLink(panels_readings[i].innerHTML, link_plain_expression);
+      if (count_plain_links > 0 && count_plain_links > (bw_countLink(panels_readings[i].innerHTML, link_anchor_expression)+bw_countLink(panels_readings[i].innerHTML, src_anchor_expression)))
+      {
+          panels_readings[i].innerHTML = bw_urlify(panels_readings[i].innerHTML, link_plain_expression);
+      }
+    }
+  }
+}
 /* UTILS FUNCTIONS */
 function local_storage_remove_button(parent_contenair_id, local_storage_key_to_find, button_txt) {
     //Insert comment button
@@ -206,14 +305,14 @@ function local_storage_remove_button(parent_contenair_id, local_storage_key_to_f
 }
 function local_storage_remove(local_storage_key_to_find)
 {
-    for ( var i = 0, len = localStorage.length; i < len; ++i ) {
-      if(localStorage.getItem( localStorage.key( i ) ) != null ){
-        if(localStorage.key( i ).indexOf(local_storage_key_to_find) > -1)
-        {
-          localStorage.removeItem(localStorage.key(i));
-        }
+  for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+    if(localStorage.getItem( localStorage.key( i ) ) != null ){
+      if(localStorage.key( i ).indexOf(local_storage_key_to_find) > -1)
+      {
+        localStorage.removeItem(localStorage.key(i));
       }
     }
+  }
 }
 function launch_autoresize_mo(contenair_selector, field_selector)
 {
@@ -272,7 +371,14 @@ function bw_urlify(text, expression) {
   var regex = new RegExp(expression);
   if(text.match(regex)){
     return text.replace(regex, function (match) {
-      return '<a target=\'_blank\' href=\'' + match + '\'>' + match + '</a>';
+      var imgregex = new RegExp(/\.(?:jpe?g|gif|png)$/);
+      if(match.match(imgregex)) {
+        var pages = document.getElementsByClassName('panel-reading');
+        var mw = pages[0].offsetWidth - 20;
+        return '<div style="display:block;width:100%;height:auto;padding-top:5px;padding-bottom:5px;"><img src="'+ match + '" style="max-width='+mw+';max-height=400"></div>';
+      } else {
+        return '<a target=\'_blank\' href=\'' + match + '\'>' + match + '</a>';
+      }
     });
   }
   return text;

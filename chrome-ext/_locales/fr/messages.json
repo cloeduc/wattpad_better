@@ -20,7 +20,7 @@
   	"message": "Afficher les fictions justifiées."
   },
   "optionsEnableLinks":{
-  	"message": "Rendre les liens clickables dans les fictions."
+  	"message": "Rendre les liens clickables et afficher les liens vers des images comme des images dans les fictions."
   },
   "optionsEnableAutoBroadcast": {
     "message": "Cocher automatiquement la case \"Informer mes abonnés\""
@@ -46,6 +46,10 @@
   "optionsEnableLocalStorageGestion":{
     "message" : "Activer les boutons pour recharger les notifications et les commentaires"
     },
+  "optionsEnableAdditionalsLinks":{
+    "message" : "Activer les liens additionnels pour naviguer dans une ficiton"
+    },
   "contentRemoveNotificationsStorage": {"message": "Charger les nouvelles notifications"},
-  "contentRemoveCommentsStorage": {"message": "Charger les nouveaux commentaires"}
+  "contentRemoveCommentsStorage": {"message": "Charger les nouveaux commentaires"},
+  "contentPrevChapter": {"message":"Relire le chapitre précédent"}
 }

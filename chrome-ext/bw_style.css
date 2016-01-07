@@ -1,3 +1,30 @@
 #wb_reload_button {
 	margin-bottom:10px; background:#F89B33;color:#fff
 }
+#topFictionNavigation {
+	border-top: 1px solid #ededed;
+	border-bottom: 1px solid #ededed;
+	display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #717171;
+    line-height: 24px;
+    height:50px;
+    width: 93%;
+    margin: auto;
+    position: relative;
+}
+.part-title {margin-bottom: 10px;}
+#topFictionNavigation .bw_links {position:absolute; display: flex; width:auto; color:#717171; top: 10px;}
+div.meta{border-bottom:none!important}
+.bw_links .fa-right{position:absolute; right: 0; top:4px;}
+.bw_links .fa-left{position:absolute; left:0; top:4px;}
+.bw_links_left .next-up-title{text-align:left!important; margin-left:20px;}
+.bw_links_right .next-up-title{margin-right:20px;}
+.bw_links_right{text-align:right; border-top:none!important;right:0;}
+
+.bw_links_left{left:0;}
+
+.bw_bottom_links .next-up-title{text-align:right;width:97%;}
+.bw_bottom_links { text-align:right;}
+

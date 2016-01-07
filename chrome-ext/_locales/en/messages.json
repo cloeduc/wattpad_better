@@ -23,7 +23,7 @@
     "message": "Check \"Notify my Followers\" box"
   },
   "optionsEnableLinks":{
-    "message": "Make links clickable on fiction page"
+    "message": "Do links clickables and display links to pictures as pictures on fiction page"
   },
   "optionsSave":{
     "message": "Save"
@@ -46,6 +46,10 @@
   "optionsEnableLocalStorageGestion":{
     "message" : "Enable comments and notifications reload button"
     },
+  "optionsEnableAdditionalsLinks":{
+    "message" : "Enable additionals links on fiction"
+    },
   "contentRemoveNotificationStorage": {"message": "Load new notifications"},
-  "contentRemoveCommentsStorage": {"message": "Load new comments"}
+  "contentRemoveCommentsStorage": {"message": "Load new comments"},
+  "contentPrevChapter": {"message":"Back to previous chapter"}
 }
