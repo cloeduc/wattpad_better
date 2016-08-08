@@ -2,18 +2,17 @@
   "name": "__MSG_WBappName__",
   "description": "__MSG_appDesc__",
   "default_locale": "fr",
-  "version": "1.1.7",
+  "version": "1.2.3",
   "author":"Alinoée",
-   "permissions": [
-          "storage"
-        ],
+
+   "permissions": ["storage", "tabs", "https://api.wattpad.com/v4/parts/"],
   "options_page": "options/options.html",
   "options_ui": {"page": "options/options.html", "chrome_style": true},
   "icons": { "128": "medias/icons/icon_128.png", "64":"medias/icons/icon_64.png", "32":"medias/icons/icon_32.png", "16":"medias/icons/icon_16.png" },
   "content_scripts": [{
     "css": [ "bw_style.css" ],
     "matches": ["https://www.wattpad.com/*"],
-    "js": [ "lib/autosize.min.js", "content.js"]
+    "js": ["lib/underscore-min.js", "lib/jquery-3.1.0.min.js", "lib/jquery-observe.js", "lib/autosize.min.js", "content.js"]
   }],
   "manifest_version": 2
 }

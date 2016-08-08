@@ -1,7 +1,7 @@
 #wb_reload_button {
 	margin-bottom:10px; background:#F89B33;color:#fff
 }
-#topFictionNavigation {
+.navigationOnFiction {
 	border-top: 1px solid #ededed;
 	border-bottom: 1px solid #ededed;
 	display: block;
@@ -14,17 +14,59 @@
     margin: auto;
     position: relative;
 }
+.navigationOnFiction .bw_links span {color:#717171; font-size: 14px; padding-top:0px;}
 .part-title {margin-bottom: 10px;}
-#topFictionNavigation .bw_links {position:absolute; display: flex; width:auto; color:#717171; top: 10px;}
+.navigationOnFiction .bw_links {position:absolute; display: flex; width:auto; color:#717171; top: 10px;}
 div.meta{border-bottom:none!important}
 .bw_links .fa-right{position:absolute; right: 0; top:4px;}
 .bw_links .fa-left{position:absolute; left:0; top:4px;}
 .bw_links_left .next-up-title{text-align:left!important; margin-left:20px;}
 .bw_links_right .next-up-title{margin-right:20px;}
 .bw_links_right{text-align:right; border-top:none!important;right:0;}
+#story-reading #parts-container-new footer .orange.bw_links_grey {
+    color: #444!important;
+    background-color: #DDD;
+    border-color: #DDD;}
+    .bw_links_left{left:0;}
 
-.bw_links_left{left:0;}
+    .bw_bottom_links .next-up-title{text-align:right;width:97%;}
+    .bw_bottom_links { text-align:right;}
 
-.bw_bottom_links .next-up-title{text-align:right;width:97%;}
-.bw_bottom_links { text-align:right;}
+    .prev-up-icon {
+        position: absolute;
+        left: -14px;
+        top: 16px;
+    }
+    .next-up-icon {
+        right: -14px;
+    }
+    .part-navigation .orange {
+        margin-bottom: 5px;
+    }
 
+    .bw_comment_contenair {
+        position: absolute;
+        left:100%;
+        font-size: 0.8em;
+        color:grey;
+        font-style: italic;
+        width: 50%;
+        padding-left: 30px;
+        display: none;
+        line-height: 15px;
+    }
+
+    .bw_overline_hover {
+        background-color: #eee;
+    }
+    .bw_comment_marker {
+        position: absolute;
+        left:100%;
+        cursor: pointer;
+        padding-left: 15px;
+        line-height: 15px;
+        z-index: 100;
+    }
+    .bw_comment_on_text {
+        display: block;
+    }

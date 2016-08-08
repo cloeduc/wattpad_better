@@ -49,6 +49,9 @@
   "optionsEnableAdditionalsLinks":{
     "message" : "Activer les liens additionnels pour naviguer dans une ficiton"
     },
+  "optionsLoadInterComments": {
+    "message" : "Charger les commentaires d'interligne"
+  },
   "contentRemoveNotificationsStorage": {"message": "Charger les nouvelles notifications"},
   "contentRemoveCommentsStorage": {"message": "Charger les nouveaux commentaires"},
   "contentPrevChapter": {"message":"Relire le chapitre précédent"}

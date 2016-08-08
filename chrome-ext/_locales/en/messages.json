@@ -49,6 +49,9 @@
   "optionsEnableAdditionalsLinks":{
     "message" : "Enable additionals links on fiction"
     },
+  "optionsLoadInterComments": {
+    "message" : "Load sublines comments"
+  },
   "contentRemoveNotificationStorage": {"message": "Load new notifications"},
   "contentRemoveCommentsStorage": {"message": "Load new comments"},
   "contentPrevChapter": {"message":"Back to previous chapter"}

@@ -8,6 +8,7 @@ function save_options() {
   var wattpad_enable_auto_broadcast =  document.getElementById('wattpad_enable_auto_broadcast').checked;
   var wattpad_enable_local_storage_gestion =  document.getElementById('wattpad_enable_local_storage_gestion').checked;
   var wattpad_enable_additional_links = document.getElementById('wattpad_enable_local_storage_gestion').checked;
+  var wattpad_enable_paragraphe_comments = document.getElementById('wattpad_enable_paragraphe_comments').checked;
 
   chrome.storage.sync.set({
     wattpad_enable_select: wattpad_enable_select,
@@ -17,7 +18,8 @@ function save_options() {
     wattpad_enable_alinea:wattpad_enable_alinea,
     wattpad_enable_auto_broadcast:wattpad_enable_auto_broadcast,
     wattpad_enable_local_storage_gestion:wattpad_enable_local_storage_gestion,
-    wattpad_enable_additional_links:wattpad_enable_additional_links
+    wattpad_enable_additional_links:wattpad_enable_additional_links,
+    wattpad_enable_paragraphe_comments:wattpad_enable_paragraphe_comments
 
   }, function() {
     // Update status to let user know options were saved.
@@ -39,6 +41,7 @@ function restore_options() {
     wattpad_enable_auto_broadcast:false,
     wattpad_enable_local_storage_gestion:false,
     wattpad_enable_additional_links:false,
+    wattpad_enable_paragraphe_comments:false,
 
   }, function(items) {
     document.getElementById('wattpad_enable_select').checked = items.wattpad_enable_select;
@@ -49,6 +52,7 @@ function restore_options() {
     document.getElementsByName('wattpad_enable_alinea')[items.wattpad_enable_alinea].checked = true;
     document.getElementById('wattpad_enable_local_storage_gestion').checked = items.wattpad_enable_local_storage_gestion;
     document.getElementById('wattpad_enable_additional_links').checked = items.wattpad_enable_additional_links;
+    document.getElementById('wattpad_enable_paragraphe_comments').checked = items.wattpad_enable_paragraphe_comments;
   });
 }
 function init(){
@@ -64,6 +68,7 @@ function translate() {
     }
   }
 }
+
 document.addEventListener('DOMContentLoaded', init);
 
 function getselectedradio(el)
