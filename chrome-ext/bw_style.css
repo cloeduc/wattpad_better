@@ -51,9 +51,11 @@ div.meta{border-bottom:none!important}
         color:grey;
         font-style: italic;
         width: 50%;
-        padding-left: 30px;
+        padding: 10px 10px 30px 10px;
         display: none;
         line-height: 15px;
+    z-index: 100;
+    background: #fff;
     }
 
     .bw_overline_hover {
@@ -65,7 +67,7 @@ div.meta{border-bottom:none!important}
         cursor: pointer;
         padding-left: 15px;
         line-height: 15px;
-        z-index: 100;
+        z-index: 110;
     }
     .bw_comment_on_text {
         display: block;

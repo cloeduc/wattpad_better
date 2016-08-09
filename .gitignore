@@ -2,3 +2,4 @@ chrome-ext/*.crx
 *.crx
 *.pem
 *.zip
+*.nex
