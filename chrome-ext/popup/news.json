@@ -1,0 +1,28 @@
+{
+ "en":{
+  "lastUpdate":"27/01/2017",
+  "news":[
+   {
+    "title":"Version 1.3 - Major update",
+    "content":"<p>This is the third version of this extension and we made lot of cosmetics updates. Support is now on <a href='https://goo.gl/TdDGNy' target='_blank'>this fiction</a>, on Wattpad</p> <p>We also fix a bug on cliclables links.</p>",
+    "date":"27/01/2017"
+  }
+]
+},
+"fr":{
+  "lastUpdate":"28/01/2017",
+  "news":[
+   {
+    "title":"Version 1.3 - Mise à jour majeur",
+    "content":"<p>Nous y sommes, l'extension entre dans sa troisième version ! Au programme, beaucoup de modifications cosmétiques. Le support s'effectuera à présent via <a href='https://goo.gl/TdDGNy' target='_blank'>Wattpad</a></p>",
+    "date":"28/01/2017"
+  },
+   {
+    "title":"[Pub] Notre premier livre papier",
+    "img":"img/melody.jpg",
+    "content":"<p>Notre livre <em>Melody, huit ans deux vampires et l'apocalypse</em>, intégralement <a href='https://goo.gl/ctKxG8'>disponible sur wattpad</a>, peut à présent être <a href='https://goo.gl/21GaRH'>acheté en version papier</a> sur notre sitepour un prix de base de <strong>4.5€</strong>.</p>",
+    "date":"08/12/2016"
+  }
+]
+}
+}

@@ -8,25 +8,25 @@
     "description":"Rends l'interface de WattPad plus praticable sur ordinateur (petites améliorations indispenssables). Complétement configurable."
   },
   "optionsTitle": {
-  	"message": "Gérer les améliorations de l'interface."
+    "message": "Gérer les améliorations de l'interface."
   },
-  "optionEnableSelect":{
-  	"message": "Activer la sélection dans les fictions."
+  "optionsEnableSelect":{
+    "message": "Activer la sélection dans les fictions."
   },
   "optionsEnableBigComment":{
-  	"message": "Adapter la taille des champs commentaire (MP, discussion) à la taille du texte saisi."
+    "message": "Adapter la taille des champs commentaire (MP, discussion) à la taille du texte saisi."
   },
   "optionsEnableJustify":{
-  	"message": "Afficher les fictions justifiées."
+    "message": "Afficher les fictions justifiées."
   },
   "optionsEnableLinks":{
-  	"message": "Rendre les liens clickables et afficher les liens vers des images comme des images dans les fictions."
+    "message": "Rendre les liens cliquables."
   },
   "optionsEnableAutoBroadcast": {
     "message": "Cocher automatiquement la case \"Informer mes abonnés\""
   },
   "optionsSave":{
-  	"message": "Enregistrer"
+    "message": "Enregistrer"
   },
   "optionsEnableAlinea":{
     "message": "Configurer l'<b>alinéa</b> en début de texte :"
@@ -45,14 +45,77 @@
   },
   "optionsEnableLocalStorageGestion":{
     "message" : "Activer les boutons pour recharger les notifications et les commentaires"
-    },
-  "optionsEnableAdditionalsLinks":{
+  },
+  "optionsEnableAdditionalLinks":{
     "message" : "Activer les liens additionnels pour naviguer dans une ficiton"
-    },
+  },
   "optionsLoadInterComments": {
     "message" : "Charger les commentaires d'interligne"
   },
   "contentRemoveNotificationsStorage": {"message": "Charger les nouvelles notifications"},
   "contentRemoveCommentsStorage": {"message": "Charger les nouveaux commentaires"},
-  "contentPrevChapter": {"message":"Relire le chapitre précédent"}
+  "contentPrevChapter": {"message":"Relire le chapitre précédent"},
+  "popupMainTitle": {"message":"WattPad Better Interface"},
+  "popupTabTitleHelp": {"message":"Aide"},
+  "popupTabTitleOptions": {"message":"Options"},
+  "popupTabTitleNews": {"message":"Actualité"},
+  "popupHelpTitle": {"message":"Vous rencontrez des problèmes avec l'extension  ?"},
+  "popupHelpFirst": {"message":"<strong>1 : </strong>Quel est le problème rencontré ? Êtes-vous certain que la fonctionnalité que vous recherchez est bien prise en charge par l'extension ? <a href='https://goo.gl/hZRjw1' target='_blank'>Consultez la liste des fonctionnalités</a> pour vous en assurer. ;)"},
+  "popupHelpSecond": {"message":"<strong>2 : </strong>Avez-vous vérifié que la fonctionnalité recherchée est bien activée ? Rendez-vous sur la page <a href='#tabOptions' class='tablinks' >options</a> pour vous en assurer."},
+  "popupHelpThird": {"message":"<strong>3 : </strong>La plupart des problèmes rencontrés peuvent être résolus en rechargeant la page... rechargez la page en cliquant sur le bouton :"},
+  "popupHelpLast": {"message":"Si vous rencontrez toujours un problème, vous pouvez nous le reporter <a href='https://goo.gl/XU1YbK'>sur cette page</a>."},
+  "popupNewsTitle": {"message":"Notre actualité"},
+  "popupNotWorkingTitle": {"message":"Attention !"},
+  "popupNotWorkingContent": {"message":"Cette extension fonctionne sur le site de Wattpad, merci de vous <a href='https://www.wattpad.com/' target='_blank'>rendre sur wattpad d'abord</a> :)"},
+  "popupBtnRefresh": {"message":"Rafraichir la page"},
+  "popupFooterVisitOurProfil": {"message":"Visiter notre profil sur Wattpad"},
+  "popupFooterBugAndFeature": {"message":"Proposer une évolution ou reporter un bug"},
+  "popupFooterDisclamer": {"message":"Ceci est une extension non officielle qui n'a aucun lien avec le Wattpad HQ. Enjoy it :)"},
+  "onWattpadFeaturesList1": {"message": "Activer les liens additionnels pour naviguer dans une histoire:
+  Ajoute des liens en haut et en bas de page pour naviguer plus facilement entre les chapitres.
+  Ajout de liens 'Précédent' et 'Suivant' en haut de page.
+  Ajout d'un lien 'Relire le chapitre précédent' en fin de page"},
+  "onWattpadFeaturesList2": {"message": "Configurer l'alinéa en début de texte :
+  Ajoute un alinéa simple ou un alinéa double en début de paragraphe."},
+  "onWattpadFeaturesList3": {"message":"Afficher les fictions justifiées :
+  Justifié/Non justifié"},
+  "onWattpadFeaturesList4": {"message":"Rendre les liens cliquables :
+  Permet de cliquer sur un lien au sein d'un texte."},
+  "onWattpadFeaturesList5": {"message":"Activer le clic droit dans les fictions et retrouver le copier/coller:
+  Si il est maintenant possible de surligner du texte dans wattpad, le clic droit est désactivé par le système (il est impossible d'afficher le menu contextuel du navigateur).
+  Réactive les le menu contextuel du navigateur et redonne accès au copier/coller."},
+  "onWattpadFeaturesList6": {"message":"Activer les boutons pour recharger les notifications et les commentaires :
+  Ajout un bouton qui permet de recharger les derniers commentaires postés si ceux ci ne s'affichent pas.
+  Pour plus d'information sur cette fonctionnalité : https://goo.gl/DXsvRS"},
+  "onWattpadFeaturesList7": {"message":"Rendre les liens cliquables :
+  Permet de cliquer sur un lien au sein d'un texte."},
+  "onWattpadFeaturesList8": {"message":"Cocher automatiquement la case 'Informer mes abonnés':
+  Garder cette case cochée par défaut."},
+  "onWattpadFeaturesList9": {"message":"Adapter la taille des champs commentaire (MP, discussion) à la taille du texte saisi:
+  Sans l'option/Avec l'option
+  Cette fonctionnalité est disponible sur les pages suivantes :
+  - Sur tous les champs de commentaire
+  - Sur la page profil/activité
+  - Dans les messages privés"},
+  "onWattpadHowTo1": {"message":"Chrome  & Opéra
+➡Rendez vous à l'adresse suivante :
+Chrome : https://goo.gl/jXDqSk
+Opéra : https://goo.gl/jXDqSk ;"},
+  "onWattpadHowTo2": {"message":"➡ Cliquer sur 'Ajouter à Chrome/Opéra'
+➡  Voilà, c'est installé, un icone s'affiche à présent dans votre barre d'extensions :
+Il faut cliquer sur l'icône pour accéder au panel de configuration de l'extension (onglet 'options')
+(Ne pas oublier de cliquer sur enregistrer)"},
+  "onWattpadHowTo3": {"message":"FireFox :
+Sous Firefox, l'extension est plus rudimentaire.
+Elle nécessite d'avoir au préalable installé l'extension GreaseMonkey.
+➡ Installer GreaseMonkey : https://addons.mozilla.org/fr/firefox/addon/greasemonkey/
+➡ Se rendre à cette adresse : https://goo.gl/TVDCJA
+Le script demande une permission pour être installé :
+➡ Se rendre sur le gestionnaire de scripts GreaseMonkey. Pour cela, dans Firefox, cliquer sur la flèche à côté de la tête de singe, puis sur « Gérer les scripts ».
+➡  Afficher le menu contextuel par un clic droit, puis cliquer sur 'Modifier'
+➡ Seul les lignes 16 à 25 permettent de gérer la configuration du script.
+A chaque fois, il vous suffit de passer les valeurs de chacune de ses lignes à true ou à false, si vous souhaitez activer ou désactiver la fonctionnalité décrite
+Avec un exception pour les alinéas dont les valeurs sont 0 (aucun), 1(alinéa simple), 2 (alinéa double)"},
+  "onWattpadHowTo2": {"message":"Internet Explorer & Safari :
+Nop. Ça n'arrivera pas."}
 }

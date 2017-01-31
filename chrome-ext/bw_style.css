@@ -9,10 +9,30 @@
     font-weight: 600;
     color: #717171;
     line-height: 24px;
-    height:50px;
-    width: 93%;
+    width: 80%;
     margin: auto;
     position: relative;
+}
+#topFictionNavigation .next-up-title, #topFictionNavigation .next-up-icon {
+    line-height: 50px;
+}
+#topFictionNavigation .next-up-title {
+    padding:0px 30px;
+}
+#topFictionNavigation a {
+    display: block;
+    color:#717171;
+}
+#topFictionNavigation a:hover {
+    background-color:rgb(237, 237, 237);
+    text-decoration: none;
+}
+#topFictionNavigation .prevlink {
+    text-align: left;
+    border-bottom: 1px solid rgb(237, 237, 237);;
+}
+#topFictionNavigation .nextlink {
+    text-align: right;
 }
 .navigationOnFiction .bw_links span {color:#717171; font-size: 14px; padding-top:0px;}
 .part-title {margin-bottom: 10px;}

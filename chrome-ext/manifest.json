@@ -2,17 +2,22 @@
   "name": "__MSG_WBappName__",
   "description": "__MSG_appDesc__",
   "default_locale": "fr",
-  "version": "1.2.4",
-  "author":"Alinoée",
-
-   "permissions": ["storage", "tabs", "https://api.wattpad.com/v4/parts/"],
-  "options_page": "options/options.html",
-  "options_ui": {"page": "options/options.html", "chrome_style": true},
+  "version": "1.3",
+  "author":"Cestdoncvrai",
+  "permissions": ["storage", "tabs", "https://api.wattpad.com/v4/parts/", "https://www.wattpad.com/*"],
+  "browser_action": {
+    "default_icon": "medias/icons/icon_32.png",
+    "default_popup": "popup/popup.html"
+  },
+  "options_page": "popup/popup.html#tabOptions",
+  "options_ui": {"page": "popup/popup.html#tabOptions", "chrome_style": false},
   "icons": { "128": "medias/icons/icon_128.png", "64":"medias/icons/icon_64.png", "32":"medias/icons/icon_32.png", "16":"medias/icons/icon_16.png" },
-  "content_scripts": [{
-    "css": [ "bw_style.css" ],
-    "matches": ["https://www.wattpad.com/*"],
-    "js": ["lib/underscore-min.js", "lib/jquery-3.1.0.min.js", "lib/jquery-observe.js", "lib/autosize.min.js", "content.js"]
-  }],
+  "content_scripts": [
+    {
+      "matches": ["*://*.wattpad.com/*"],
+      "css": [ "bw_style.css" ],
+      "js": ["lib/underscore-min.js", "lib/jquery-3.1.0.min.js", "lib/jquery-observe.js", "lib/autosize.min.js", "content.js"]
+    }
+  ],
   "manifest_version": 2
 }

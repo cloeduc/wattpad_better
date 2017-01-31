@@ -10,7 +10,7 @@
   "optionsTitle": {
     "message": "Manage WattPad interface ameliorations"
   },
-  "optionEnableSelect":{
+  "optionsEnableSelect":{
     "message": "Enable selection on fictions"
   },
   "optionsEnableBigComment":{
@@ -23,7 +23,7 @@
     "message": "Check \"Notify my Followers\" box"
   },
   "optionsEnableLinks":{
-    "message": "Do links clickables and display links to pictures as pictures on fiction page"
+    "message": "Make clickables links"
   },
   "optionsSave":{
     "message": "Save"
@@ -46,7 +46,7 @@
   "optionsEnableLocalStorageGestion":{
     "message" : "Enable comments and notifications reload button"
     },
-  "optionsEnableAdditionalsLinks":{
+  "optionsEnableAdditionalLinks":{
     "message" : "Enable additionals links on fiction"
     },
   "optionsLoadInterComments": {
@@ -54,5 +54,21 @@
   },
   "contentRemoveNotificationStorage": {"message": "Load new notifications"},
   "contentRemoveCommentsStorage": {"message": "Load new comments"},
-  "contentPrevChapter": {"message":"Back to previous chapter"}
+  "contentPrevChapter": {"message":"Back to previous chapter"},
+  "popupMainTitle": {"message":"WattPad Better Interface"},
+  "popupTabTitleHelp": {"message":"Help"},
+  "popupTabTitleOptions": {"message":"Options"},
+  "popupTabTitleNews": {"message":"Last news"},
+  "popupHelpTitle": {"message":"Have trouble with this tool ?"},
+  "popupHelpFirst": {"message":"<strong>First:</strong> What is your issue? Are you perfectly sure that the extension must really do what you expected ? To be sure, please check the complete <a href='https://goo.gl/mXdD7e' target='_blank'>functionality description</a>"},
+  "popupHelpSecond": {"message":"<strong>Second:</strong> Did you check the option page ? Are you sure that the missing functionality is actually activated ? Please check your <a href='#tabOptions' class='tablinks' >options</a> before sending us a report."},
+  "popupHelpThird": {"message":"<strong>Third:</strong> Most issues can simply be solved with a page refreshing... Please try to refresh:"},
+  "popupHelpLast": {"message":"If you still see an issue, please report to us on <a href='https://goo.gl/oKYSEM'> this particular page</a> (in english or in french, please)."},
+  "popupNewsTitle": {"message":"Our actuality"},
+  "popupNotWorkingTitle": {"message":"Caution !"},
+  "popupNotWorkingContent": {"message":"This extension only works on Wattpad Website, please <a href='https://www.wattpad.com/' target='_blank'>go to wattpad before</a> :)"},
+  "popupBtnRefresh": {"message":"Refesh the page"},
+  "popupFooterVisitOurProfil": {"message":"Visite our profil on Wattpad"},
+  "popupFooterBugAndFeature": {"message":"Request a feature or report bug"},
+  "popupFooterDisclamer": {"message":"This is an unofficial wattpad extension, I do it to improve my wattpad experience... and yours. Please enjoy-it :)"}
 }
