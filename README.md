@@ -1,9 +1,8 @@
 
-/!\ You want this extension on your language ? Help us to translate it :  https://goo.gl/LhdmsU
+> You want this extension on your language ? Help us to translate it :  https://goo.gl/LhdmsU
 
-#WattPad Better 
+# WattPad Better Interface #
 Make better Wattpad interface on desktop (just somes tricks, but incredibly convenient). Fully configurable
-
 
 This extension make WattPad desktop interface better. 
 It add few smart but essential features : 
@@ -21,28 +20,28 @@ You can enable and disable each functionality on the extension settings
 
 Unofficial application, develop for  fun !
 
-##Deps
+## Deps 
 This plugin depends on [JQuery](http://code.jquery.come)
 
 
-##Installation
-###Chrome
+## Installation 
+### Chrome
 You can load the unpackage extension in chrome-ext folder
 [See Official help](https://developer.chrome.com/extensions/getstarted#unpacked)
 
 Or you can direclty install [the extension from webstore](https://chrome.google.com/webstore/detail/am%C3%A9lioration-de-linterfac/gpedaoelggnhmcmpkjckffcngagcciol)  :)
 
-###Firefox (Greasemonkey)
+### Firefox (Greasemonkey)
 Find Greasemonkey Script on Grease-monkey-script folder and add it to your Grease Monkey library.
 
-###Opera
+### Opera
 You can unpackage chrome extension in opera exentions
 Or you can direclty install [the extension from webstore](https://addons.opera.com/fr/extensions/details/better-wattpad-interface/?display=fr)  :)
 
 
-###Safari
+### Safari
 No support, yet.
-###Internet Explorer
+### Internet Explorer
 No support. Never.
 
 
